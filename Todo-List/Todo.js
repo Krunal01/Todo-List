@@ -22,6 +22,7 @@ addbtn.addEventListener("click", (e) => {
 
 const input = document.querySelector("#addtodol");
 
+console.log("Users's today plan is : ");
 input.addEventListener("keypress", (e) => {
   if (!addtodo.value) return;
 
@@ -29,8 +30,7 @@ input.addEventListener("keypress", (e) => {
     const listitem = document.createElement("li");
     listitem.className = "listitem";
     listitem.innerText = addtodo.value;
-    // console.log(addtodo.value);
-    console.log(`Todo list of User is : ${addtodo.value}`);
+    console.log(addtodo.value);
     listitem.addEventListener("click", (e) => {
       listitem.style.display = "none";
     });
@@ -43,7 +43,9 @@ input.addEventListener("keypress", (e) => {
 });
 
 const signUp = document.getElementById("signUp");
-
+function Message() {
+  alert("Check details in console");
+}
 signUp.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -55,13 +57,16 @@ signUp.addEventListener("submit", (e) => {
   const Textarea = document.getElementById("about").value;
 
   console.log(`
-  Name of User is : ${userName}, 
-  Password of User is : ${Password}, 
-  Confirm password of User is : ${confirmPassword}, 
-  Phone number of User is : ${Phone}, 
-  Emial of User is : ${Email},
+  Name of User is : ${userName}
+  Password of User is : ${Password} 
+  Confirm password of User is : ${confirmPassword}
+  Phone number of User is : ${Phone}
+  Emial of User is : ${Email}
   Address of User is : ${Textarea}
   `);
 
   signUp.reset();
+  ul.style.display = "none";
+
+  const myTimeout = setTimeout(Message, 1000);
 });

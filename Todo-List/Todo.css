@@ -218,4 +218,6 @@ a {
 }
 .form-grpup {
   margin-top: 1rem;
+  outline: none;
+  border: none;
 }
