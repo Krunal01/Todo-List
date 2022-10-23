@@ -3,12 +3,13 @@ const addbtn = document.getElementById("addsubmit");
 const ul = document.getElementById("newul");
 const btnsub = document.getElementById("btnsub");
 const sectionTodo = document.getElementById("section-todo");
-console.log(ul);
+// console.log(ul);
 // console.log(addtodo.innerText);
 addbtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (addtodo.value === "") return;
   //   ul.style.display = "block";
+  console.log(addtodo.value);
   const listitem = document.createElement("li");
   listitem.className = "listitem";
   listitem.innerText = addtodo.value;
@@ -17,7 +18,10 @@ addbtn.addEventListener("click", (e) => {
     </button>`;
   ul.appendChild(listitem);
   input.value = "";
-  //   console.log(`${addtodo.value}`);
+  // listitem.addEventListener("click", () => {
+  //   console.log(`Change is there  ${listitem.innerText}  from today's plan`);
+  // });
+  // console.log(`${addtodo.value}`);
 });
 
 const input = document.querySelector("#addtodol");
@@ -30,21 +34,24 @@ input.addEventListener("keypress", (e) => {
     const listitem = document.createElement("li");
     listitem.className = "listitem";
     listitem.innerText = addtodo.value;
-    console.log(addtodo.value);
     listitem.addEventListener("click", (e) => {
       listitem.style.display = "none";
+      // console.log(addtodo.value);
     });
-    listitem.innerHTML = `<p>${addtodo.value}</p><button class="ul-btn">
-        <b>Remove</b>
-      </button>`;
+    listitem.innerHTML = `<p>${addtodo.value}</p>  <button class="ul-btn" id="removed"><b>Remove</b>
+    </button>`;
+    console.log(addtodo.value);
     ul.appendChild(listitem);
     input.value = "";
+    listitem.addEventListener("click", () => {
+      console.log(`Change is there  ${listitem.innerText}  from today's plan`);
+    });
   }
 });
 
 const signUp = document.getElementById("signUp");
 function Message() {
-  alert("Check details in console");
+  alert("Data Successfully Submitted\nCheck Details in Console");
 }
 signUp.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -68,5 +75,5 @@ signUp.addEventListener("submit", (e) => {
   signUp.reset();
   ul.style.display = "none";
 
-  const myTimeout = setTimeout(Message, 1000);
+  setTimeout(Message, 100);
 });
