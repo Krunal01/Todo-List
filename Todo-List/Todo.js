@@ -13,14 +13,19 @@ addbtn.addEventListener("click", (e) => {
   const listitem = document.createElement("li");
   listitem.className = "listitem";
   listitem.innerText = addtodo.value;
+  listitem.addEventListener("click", (e) => {
+    listitem.style.display = "none";
+    // console.log(addtodo.value);
+  });
   listitem.innerHTML = `<p>${addtodo.value}</p><button class="ul-btn">
       <b>Remove</b>
     </button>`;
   ul.appendChild(listitem);
   input.value = "";
-  // listitem.addEventListener("click", () => {
-  //   console.log(`Change is there  ${listitem.innerText}  from today's plan`);
-  // });
+  listitem.addEventListener("click", () => {
+    console.log(`Change is there  ${listitem.innerText}  from today's plan`);
+    // ul.style.display = "none";
+  });
   // console.log(`${addtodo.value}`);
 });
 
