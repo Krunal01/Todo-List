@@ -17,13 +17,11 @@ addbtn.addEventListener("click", (e) => {
     listitem.style.display = "none";
     // console.log(addtodo.value);
   });
-  listitem.innerHTML = `<p>${addtodo.value}</p><button class="ul-btn">
-      <b>Remove</b>
-    </button>`;
+  listitem.innerHTML = `<p>${addtodo.value}</p><button class="ul-btn">  <b>Remove</b></button>`;
   ul.appendChild(listitem);
   input.value = "";
   listitem.addEventListener("click", () => {
-    console.log(`Change is there  ${listitem.innerText}  from today's plan`);
+    console.log(`Change is there ${listitem.innerText} from today's plan`);
     // ul.style.display = "none";
   });
   // console.log(`${addtodo.value}`);
@@ -43,13 +41,12 @@ input.addEventListener("keypress", (e) => {
       listitem.style.display = "none";
       // console.log(addtodo.value);
     });
-    listitem.innerHTML = `<p>${addtodo.value}</p>  <button class="ul-btn" id="removed"><b>Remove</b>
-    </button>`;
+    listitem.innerHTML = `<p>${addtodo.value}</p><button class="ul-btn" id="removed"> <b>Remove</b></button>`;
     console.log(addtodo.value);
     ul.appendChild(listitem);
     input.value = "";
     listitem.addEventListener("click", () => {
-      console.log(`Change is there  ${listitem.innerText}  from today's plan`);
+      console.log(`Change is there ${listitem.innerText} from today's plan`);
     });
   }
 });
@@ -73,7 +70,7 @@ signUp.addEventListener("submit", (e) => {
   Password of User is : ${Password} 
   Confirm password of User is : ${confirmPassword}
   Phone number of User is : ${Phone}
-  Emial of User is : ${Email}
+  Email of User is : ${Email}
   Address of User is : ${Textarea}
   `);
 
